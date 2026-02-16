@@ -1,0 +1,221 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
+}
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+nav .nav-links {
+    display: flex;
+    list-style: none;
+}
+nav .nav-links li {
+    margin-left: 20px;
+}
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav .nav-links a:hover {
+    color: #ff4c60;
+}
+nav .burger {
+    display: none;
+    cursor: pointer;
+}
+nav .burger div {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg,#ff4c60,#ff8c00);
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.hero h1 span {
+    color: #fff;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.btn {
+    padding: 10px 25px;
+    background: #fff;
+    color: #ff4c60;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #ff4c60;
+    color: #fff;
+}
+
+/* Sections */
+section {
+    padding: 100px 50px;
+    text-align: center;
+}
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff4c60;
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transform: perspective(1000px);
+    transition: transform 0.5s;
+}
+.project-card:hover {
+    transform: scale(1.05) rotateY(5deg);
+}
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+.project-card:hover img {
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,76,96,0.85);
+    color: #fff;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+.project-card:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Services */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(255,76,96,0.5);
+}
+
+/* Contact */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: #ff4c60;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+.whatsapp-btn:hover {
+    background: #ff8c00;
+}
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+}
+.contact input,
+.contact button {
+    padding: 15px;
+    border: none;
+    background: #ff4c60;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact button:hover {
+    background: #ff8c00;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #111;
+    text-align: center;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    nav .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        height: calc(100vh - 70px);
+        background: #111;
+        flex-direction: column;
+        align-items: center;
+        width: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    nav .nav-links.active {
+        width: 50%;
+    }
+    nav .burger {
+        display: block;
+    }
+}
